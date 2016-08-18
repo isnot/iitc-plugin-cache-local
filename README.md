@@ -1,1 +1,2 @@
-# iitc-plugin-cache-portals
+# iitc-plugin-cache-local
+cache into localStrage
