@@ -100,13 +100,13 @@ function wrapper(plugin_info) {
       });
     };
 
-    window.plugin.cacheLocal.cache_local_is_loaded = true;
     cache.loadFromLocal();
+    addHook('mapDataRefreshEnd', window.plugin.cachePortalDetailsOnMap.storeToLocal);
+    window.plugin.cacheLocal.cache_local_is_loaded = true;
   };
 
   var setup = function() {
-    addHook('iitcLoaded',        window.plugin.cacheLocal.inject_to_cache);
-    addHook('mapDataRefreshEnd', window.plugin.cachePortalDetailsOnMap.storeToLocal);
+    addHook('iitcLoaded', window.plugin.cacheLocal.inject_to_cache);
   };
 
   // PLUGIN END //////////////////////////////////////////////////////////
